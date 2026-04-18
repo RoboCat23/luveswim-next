@@ -422,7 +422,7 @@ export default function Home() {
             alignItems: "center",
             textAlign: "center",
             padding: "0 1.5rem",
-            zIndex: 10,
+            zIndex: 30,
           }}
         >
           <Reveal delay={0.1}>
