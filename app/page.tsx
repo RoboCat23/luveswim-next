@@ -768,22 +768,33 @@ export default function Home() {
                     textShadow: "0 2px 12px rgba(0,0,0,0.3)",
                   }}
                 >
-                  Hi, I&apos;m Seth Green.<br />
-                  And I{" "}
-                  <span style={{ color: "#FF6B6B" }}>LUVE</span>{" "}
-                  to swim.
+                  Hi, I&apos;m Seth Green,<br />
+                  founder of{" "}
+                  <span style={{ color: "#FF6B6B" }}>LUVE Swim.</span>
                 </h2>
                 <p
                   className="leading-relaxed mb-4"
                   style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.08rem" }}
                 >
-                  I&apos;m CPR/AED certified with 4+ years as a swim instructor and lifeguard supervisor. I work with kids, adults, nervous beginners, and toddlers who mostly just want to splash around at first.
+                  I&apos;m currently a freshman at the University of Houston&apos;s Bauer College of Business, with over 4 years of experience in lifeguarding, lifeguard supervision, swim instruction, and childcare.
+                </p>
+                <p
+                  className="leading-relaxed mb-4"
+                  style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.08rem" }}
+                >
+                  I&apos;ve worked with children ages 3&ndash;17 both in and out of the water, focusing on building confidence, safety, and strong swimming fundamentals. Growing up around the water and competing in swimming, I&apos;ve always had a passion for helping others learn.
+                </p>
+                <p
+                  className="leading-relaxed mb-4"
+                  style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.08rem" }}
+                >
+                  I created LUVE Swim to provide personalized, high-quality swim lessons that meet each swimmer where they are, whether they&apos;re just starting or looking to improve. I take pride in creating a safe, fun, and structured environment for every swimmer.
                 </p>
                 <p
                   className="leading-relaxed mb-8"
                   style={{ color: "rgba(255,255,255,0.82)", fontSize: "1.08rem" }}
                 >
-                  I bring toys, games, and prizes to every lesson. Kids learn way better when they&apos;re having too much fun to think about it. I show up right at your pool, so no packing everyone up, no driving anywhere.
+                  Don&apos;t forget your U CAN energy&hellip; i&apos;ll see you in the water 🏊‍♂️
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {[
