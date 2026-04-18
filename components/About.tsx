@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 
 const credentials = [
   { icon: "🛡️", label: "CPR/AED Certified" },
-  { icon: "🏊", label: "4+ Years Lifeguard Experience" },
-  { icon: "🏡", label: "Comes to Your Pool" },
+  { icon: "🏊", label: "4+ Years Swim Instruction" },
+  { icon: "👦", label: "Ages 3–17 Specialist" },
   { icon: "🏆", label: "Competitive Swim Background" },
+  { icon: "🏡", label: "Comes to Your Pool" },
 ];
 
 export default function About() {
@@ -42,7 +43,7 @@ export default function About() {
                 style={{ width: 340, height: 420 }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                  src="/seth.jpg"
                   alt="Seth Green — LUVESWIM Instructor"
                   fill
                   className="object-cover"
@@ -89,31 +90,41 @@ export default function About() {
                 fontSize: "clamp(2rem, 4vw, 3rem)",
               }}
             >
-              Hi, I&apos;m Seth Green.<br />
-              And I{" "}
-              <span style={{ color: "#FF6B6B" }}>
-                LUVE
-              </span>{" "}
-              to swim.
+              Hi, I&apos;m Seth Green,<br />
+              founder of{" "}
+              <span style={{ color: "#FF6B6B" }}>LUVE Swim.</span>
             </h2>
             <p
               className="leading-relaxed mb-4"
               style={{ color: "#3d5260", fontSize: "1.08rem" }}
             >
-              I&apos;m a CPR/AED certified swim instructor with over 4 years of
-              lifeguard experience. I work with swimmers of all ages, from
-              splash-happy toddlers to adults who&apos;ve been putting this off
-              for years, and I genuinely love watching people get comfortable
-              in the water.
+              I&apos;m currently a freshman at the University of Houston&apos;s
+              Bauer College of Business, with over 4 years of experience in
+              lifeguarding, lifeguard supervision, swim instruction, and childcare.
+            </p>
+            <p
+              className="leading-relaxed mb-4"
+              style={{ color: "#3d5260", fontSize: "1.08rem" }}
+            >
+              I&apos;ve worked with children ages 3&ndash;17 both in and out of
+              the water, focusing on building confidence, safety, and strong
+              swimming fundamentals. Growing up around the water and competing in
+              swimming, I&apos;ve always had a passion for helping others learn.
+            </p>
+            <p
+              className="leading-relaxed mb-4"
+              style={{ color: "#3d5260", fontSize: "1.08rem" }}
+            >
+              I created LUVE Swim to provide personalized, high-quality swim
+              lessons that meet each swimmer where they are, whether they&apos;re
+              just starting or looking to improve. I take pride in creating a
+              safe, fun, and structured environment for every swimmer.
             </p>
             <p
               className="leading-relaxed mb-8"
               style={{ color: "#3d5260", fontSize: "1.08rem" }}
             >
-              I bring toys, games, and prizes to every lesson because kids
-              learn way better when they&apos;re too busy having fun to notice.
-              And I come right to your pool. You never have to pack up the kids
-              and drive anywhere.
+              Don&apos;t forget your U CAN energy&hellip; i&apos;ll see you in the water 🏊‍♂️
             </p>
 
             {/* Credential chips */}
@@ -133,6 +144,52 @@ export default function About() {
                   {c.label}
                 </span>
               ))}
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3 mb-8">
+              <a
+                href="https://www.instagram.com/luveswim?igsh=N3prazFlcDI0NWJ0&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200 hover:scale-110"
+                style={{ background: "rgba(12,192,223,0.12)", color: "#0CC0DF" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#0CC0DF";
+                  (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "rgba(12,192,223,0.12)";
+                  (e.currentTarget as HTMLElement).style.color = "#0CC0DF";
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1A5bh9JZru/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200 hover:scale-110"
+                style={{ background: "rgba(12,192,223,0.12)", color: "#0CC0DF" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#0CC0DF";
+                  (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "rgba(12,192,223,0.12)";
+                  (e.currentTarget as HTMLElement).style.color = "#0CC0DF";
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
             </div>
 
             <a

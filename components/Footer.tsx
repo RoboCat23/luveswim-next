@@ -3,13 +3,13 @@
 const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
-const EMAIL = "seth0203@outlook.com";
-const EMAIL_HREF = "mailto:seth0203@outlook.com";
+const EMAIL = "Contact@luveswim.com";
+const EMAIL_HREF = "mailto:contact@luveswim.com";
 
 const socialLinks = [
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/luveswim?igsh=N3prazFlcDI0NWJ0&utm_source=qr",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/share/1A5bh9JZru/?mibextid=wwXIfr",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,22 +42,6 @@ const socialLinks = [
         aria-hidden="true"
       >
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      </svg>
-    ),
-  },
-  {
-    label: "TikTok",
-    href: "#",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34l-.01-8.25a8.22 8.22 0 0 0 4.81 1.55V5.16a4.85 4.85 0 0 1-1.03-.47z" />
       </svg>
     ),
   },

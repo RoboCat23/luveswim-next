@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Figtree, Geist } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -38,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -51,7 +48,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${figtree.className} antialiased`}>{children}</body>
+      <body className={`${figtree.className} antialiased`} suppressHydrationWarning>{children}</body>
     </html>
   );
 }
