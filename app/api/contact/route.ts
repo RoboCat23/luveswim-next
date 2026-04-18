@@ -1,7 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FROM = "LUVE Swim <test@team.trkaiagency.com>";
 const SETH_EMAIL = "contact@luveswim.com";
@@ -171,6 +170,8 @@ function applicantEmailHtml(name: string): string {
 // ─── Route handler ────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const { name, email, swimmers, message } = await req.json();
 
     if (!name || !email) {
