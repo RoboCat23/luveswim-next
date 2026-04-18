@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 
 export default function LuvePromise() {
   return (
@@ -140,8 +140,6 @@ export default function LuvePromise() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
           href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-700 transition-all duration-200 hover:scale-105"
           style={{
             background: "#ffffff",

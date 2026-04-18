@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
 const EMAIL_HREF = "mailto:seth.green@luveswim.com";
@@ -249,6 +249,8 @@ export default function Home() {
   const [contactOpen, setContactOpen] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", swimmers: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   useEffect(() => {
     const vw = window.innerWidth;
@@ -1552,8 +1554,6 @@ export default function Home() {
               <div className="flex flex-col gap-4">
                 <a
                   href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105"
                   style={{
                     background: "linear-gradient(135deg, #FF6B6B, #e85555)",
@@ -1596,7 +1596,7 @@ export default function Home() {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(6px)" }}
-          onClick={() => { setContactOpen(false); setSubmitted(false); }}
+          onClick={() => { setContactOpen(false); setSubmitted(false); setSendError(""); }}
         >
           <div
             className="relative w-full max-w-lg rounded-3xl p-8"
@@ -1605,7 +1605,7 @@ export default function Home() {
           >
             {/* Close */}
             <button
-              onClick={() => { setContactOpen(false); setSubmitted(false); }}
+              onClick={() => { setContactOpen(false); setSubmitted(false); setSendError(""); }}
               className="absolute top-4 right-4 text-2xl"
               style={{ color: "rgba(255,255,255,0.4)" }}
             >
@@ -1628,12 +1628,27 @@ export default function Home() {
                 </p>
                 <form
                   className="flex flex-col gap-4"
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    const { name, email, swimmers, message } = formState;
-                    const body = `Name: ${name}%0AEmail: ${email}%0ASwimmers: ${swimmers}%0AMessage: ${message}`;
-                    window.location.href = `mailto:seth.green@luveswim.com?subject=Swim Lesson Inquiry from ${name}&body=${body}`;
-                    setSubmitted(true);
+                    setSending(true);
+                    setSendError("");
+                    try {
+                      const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formState),
+                      });
+                      if (res.ok) {
+                        setSubmitted(true);
+                        setFormState({ name: "", email: "", swimmers: "", message: "" });
+                      } else {
+                        setSendError("Something went wrong. Please try again or email us directly.");
+                      }
+                    } catch {
+                      setSendError("Something went wrong. Please try again or email us directly.");
+                    } finally {
+                      setSending(false);
+                    }
                   }}
                 >
                   <input
@@ -1668,12 +1683,16 @@ export default function Home() {
                     className="w-full px-4 py-3 rounded-xl text-sm resize-none"
                     style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff" }}
                   />
+                  {sendError && (
+                    <p className="text-sm text-center" style={{ color: "#FF6B6B" }}>{sendError}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl text-white transition-all hover:opacity-90"
+                    disabled={sending}
+                    className="w-full py-3.5 rounded-xl text-white transition-all hover:opacity-90 disabled:opacity-60"
                     style={{ background: "linear-gradient(135deg, #0CC0DF, #0093B2)", fontWeight: 700 }}
                   >
-                    Send Message →
+                    {sending ? "Sending…" : "Apply →"}
                   </button>
                 </form>
               </>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
 
@@ -72,8 +72,6 @@ export default function BookingCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn-pulse inline-flex items-center gap-3 px-8 py-4 rounded-full font-700 text-white transition-all duration-200 hover:scale-105"
             style={{
               background: "linear-gradient(135deg, #FF6B6B, #e85555)",

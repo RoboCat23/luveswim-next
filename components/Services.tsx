@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 
 const services = [
   {
@@ -207,8 +207,6 @@ export default function Services() {
                 {/* CTA */}
                 <a
                   href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="mt-6 block text-center py-3 rounded-xl font-700 text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
                   style={{
                     background: service.accentColor,

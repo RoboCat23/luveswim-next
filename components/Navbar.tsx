@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
 const EMAIL_HREF = "mailto:contact@luveswim.com";
@@ -117,8 +117,6 @@ export default function Navbar() {
               </a>
               <a
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="btn-book inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-700 text-white transition-all duration-200"
                 style={{ background: "linear-gradient(135deg, #FF6B6B, #e85555)", fontWeight: 700 }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1.04)")}
@@ -224,8 +222,6 @@ export default function Navbar() {
             </div>
             <a
               href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               onClick={closeMenu}
               className="text-center px-6 py-3 rounded-full text-white font-700 text-base"
               style={{ background: "linear-gradient(135deg, #FF6B6B, #e85555)", fontWeight: 700 }}

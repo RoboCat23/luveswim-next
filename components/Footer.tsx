@@ -1,6 +1,6 @@
 "use client";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
 const EMAIL = "Contact@luveswim.com";
@@ -132,7 +132,7 @@ export default function Footer() {
               { label: "Services & Pricing", href: "#services" },
               { label: "The LUVE PROMISE", href: "#promise" },
               { label: "Testimonials", href: "#testimonials" },
-              { label: "Book a Lesson", href: BOOKING_URL, external: true },
+              { label: "Book a Lesson", href: BOOKING_URL, external: false },
             ].map((link) => (
               <a
                 key={link.label}
@@ -191,8 +191,6 @@ export default function Footer() {
             </div>
             <a
               href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-full font-700 text-sm transition-all duration-200 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #FF6B6B, #e85555)",

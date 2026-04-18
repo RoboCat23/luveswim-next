@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const BOOKING_URL = "https://luveswim.as.me/schedule/a248e30e";
+const BOOKING_URL = "/book";
 
 /* Fixed bubble positions — no Math.random() avoids hydration mismatch */
 const BUBBLES = [
@@ -320,8 +320,6 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 mb-8">
               <a
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="btn-pulse inline-flex items-center gap-2 rounded-full text-white transition-transform duration-200 hover:scale-105 active:scale-95"
                 style={{
                   background: "linear-gradient(135deg, #FF6B6B, #e85555)",
@@ -459,8 +457,6 @@ export default function Hero() {
           {/* Final CTA */}
           <motion.a
             href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn-pulse inline-flex items-center gap-2 rounded-full text-white hover:scale-105 active:scale-95 transition-transform duration-200"
             style={{
               opacity: finalOpacity,
