@@ -188,7 +188,7 @@ function applicantEmailHtml(name: string): string {
     <!-- CTA -->
     <table width="100%" cellpadding="0" cellspacing="0">
       <tr>
-        <td align="right">
+        <td align="center">
           <table cellpadding="0" cellspacing="0">
             <tr>
               <td style="border-radius:50px;background:linear-gradient(135deg,#FF6B6B,#e85555);box-shadow:0 6px 20px rgba(255,107,107,0.35);">
