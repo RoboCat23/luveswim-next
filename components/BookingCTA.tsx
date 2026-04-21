@@ -64,9 +64,8 @@ export default function BookingCTA() {
             margin: "0 auto 2.5rem",
           }}
         >
-          Seth&apos;s schedule fills up fast, especially in summer. Book your
-          spot now and get your swimmer going, backed by the full LUVE
-          PROMISE guarantee.
+          Spots fill up fast, especially in summer. Book your spot now and
+          get your swimmer going, backed by the full LUVE PROMISE guarantee.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -98,7 +97,7 @@ export default function BookingCTA() {
               (e.currentTarget as HTMLElement).style.background = "transparent";
             }}
           >
-            📞 Call Seth: {PHONE_DISPLAY}
+            📞 {PHONE_DISPLAY}
           </a>
         </div>
 
@@ -106,7 +105,7 @@ export default function BookingCTA() {
           className="mt-8 text-sm"
           style={{ color: "rgba(255,255,255,0.65)" }}
         >
-          48-hour cancellation notice required. Weather reschedules always free.
+          48-hour cancellation notice required.
         </p>
       </motion.div>
     </section>

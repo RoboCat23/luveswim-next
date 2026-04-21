@@ -183,7 +183,7 @@ export default function Navbar() {
               className="text-base font-600 py-2"
               style={{ color: "#0CC0DF", fontWeight: 700 }}
             >
-              Call Seth: {PHONE_DISPLAY}
+              Call: {PHONE_DISPLAY}
             </a>
             <a
               href={EMAIL_HREF}

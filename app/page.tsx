@@ -8,8 +8,8 @@ import Navbar from "@/components/Navbar";
 const BOOKING_URL = "/book";
 const PHONE_TEL = "tel:+18326005534";
 const PHONE_DISPLAY = "(832) 600-5534";
-const EMAIL_HREF = "mailto:seth.green@luveswim.com";
-const EMAIL = "seth.green@luveswim.com";
+const EMAIL_HREF = "mailto:contact@luveswim.com";
+const EMAIL = "contact@luveswim.com";
 
 // ─── Inline SVG Creatures ───────────────────────────────────────────────────
 
@@ -792,12 +792,6 @@ export default function Home() {
                 >
                   I created LUVE Swim to provide personalized, high-quality swim lessons that meet each swimmer where they are, whether they&apos;re just starting or looking to improve. I take pride in creating a safe, fun, and structured environment for every swimmer.
                 </p>
-                <p
-                  className="leading-relaxed mb-8"
-                  style={{ color: "rgba(255,255,255,0.82)", fontSize: "1.08rem" }}
-                >
-                  Don&apos;t forget your U CAN energy&hellip; i&apos;ll see you in the water 🏊‍♂️
-                </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {[
                     { icon: "🛡️", label: "CPR/AED Certified" },
@@ -919,7 +913,7 @@ export default function Home() {
                   ],
                   duration: "10-lesson minimum",
                   description:
-                    "Kids learn better with someone they know. The sibling package puts your kids in together and saves you $100 to $200 off individual rates.",
+                    "Every lesson is still 1-on-1. When you enroll both siblings, each gets the same private, focused attention — just at a reduced rate. No group format, just a better deal for families.",
                   accent: "#FF6B6B",
                 },
               ].map((s, i) => (
@@ -995,79 +989,6 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Lifeguard — full-width banner card */}
-            <Reveal delay={0.4}>
-              <div
-                className="service-card mt-8 rounded-2xl overflow-hidden"
-                style={{
-                  background: "rgba(255,255,255,0.08)",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  backdropFilter: "blur(12px)",
-                  borderTop: "4px solid #FF6B6B",
-                }}
-              >
-                <div className="p-7 flex flex-col md:flex-row md:items-center gap-6">
-                  {/* Icon + header */}
-                  <div className="flex items-center gap-4 md:min-w-[220px]">
-                    <span style={{ fontSize: "2.8rem" }}>🛟</span>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="text-lg" style={{ color: "#ffffff", fontWeight: 700 }}>
-                          Private Lifeguard Hire
-                        </h3>
-                        <span
-                          className="text-xs px-3 py-1 rounded-full"
-                          style={{ background: "#FF6B6B28", color: "#FF6B6B", fontWeight: 700 }}
-                        >
-                          Events & Parties
-                        </span>
-                      </div>
-                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>
-                        Minimum 3 hours
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p
-                    className="leading-relaxed text-sm flex-1"
-                    style={{ color: "rgba(255,255,255,0.75)" }}
-                  >
-                    Hosting a pool party or HOA event? We can cover it. CPR/AED certified, experienced, and good at keeping a pool safe while everyone actually has fun. For parties over 4 hours, contact us for a quote.
-                  </p>
-
-                  {/* Pricing */}
-                  <div className="flex gap-3 flex-shrink-0">
-                    {[
-                      { label: "Per hour", price: "$35/hr" },
-                      { label: "3-hour minimum", price: "$105" },
-                    ].map((p) => (
-                      <div
-                        key={p.label}
-                        className="flex flex-col px-3 py-2 rounded-xl"
-                        style={{ background: "rgba(255,255,255,0.07)" }}
-                      >
-                        <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                          {p.label}
-                        </span>
-                        <span className="text-lg" style={{ color: "#FF6B6B", fontWeight: 800 }}>
-                          {p.price}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <button
-                    onClick={() => setContactOpen(true)}
-                    className="flex-shrink-0 text-center px-8 py-3 rounded-xl text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-                    style={{ background: "#FF6B6B", color: "#ffffff", fontWeight: 700 }}
-                  >
-                    Contact Us →
-                  </button>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -1488,7 +1409,7 @@ export default function Home() {
                   LUVESWIM
                 </p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
-                  Houston&apos;s Fun Swim Instructor
+                  Houston&apos;s Best Swim Instructor
                 </p>
                 <p className="mt-2 text-sm italic" style={{ color: "rgba(255,255,255,0.4)" }}>
                   &quot;Where U Can Do It&quot;
@@ -1572,7 +1493,7 @@ export default function Home() {
               style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem" }}
             >
               <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                © 2026 LUVESWIM. All rights reserved.
+                © 2026 Luve Enterprises LLC. All rights reserved.
               </p>
               <div className="flex gap-4">
                 {["Privacy Policy", "Cancellation Policy"].map((link) => (
@@ -1617,14 +1538,14 @@ export default function Home() {
                 <div className="text-5xl mb-4">🌊</div>
                 <h3 className="font-pacifico text-white text-2xl mb-3">Message Sent!</h3>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Seth will be in touch within 24 hours to set up your first lesson.
+                  We&apos;ll be in touch within 24 hours to set up your first lesson.
                 </p>
               </div>
             ) : (
               <>
                 <h3 className="font-pacifico text-white text-2xl mb-2">Let&apos;s Get in Touch</h3>
                 <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
-                  Tell us a little about who&apos;s learning. Seth will reach out within 24 hours.
+                  Tell us a little about who&apos;s learning. We&apos;ll reach out within 24 hours.
                 </p>
                 <form
                   className="flex flex-col gap-4"
@@ -1677,7 +1598,7 @@ export default function Home() {
                   />
                   <textarea
                     rows={3}
-                    placeholder="Anything else Seth should know?"
+                    placeholder="Anything else we should know?"
                     value={formState.message}
                     onChange={(e) => setFormState(s => ({ ...s, message: e.target.value }))}
                     className="w-full px-4 py-3 rounded-xl text-sm resize-none"

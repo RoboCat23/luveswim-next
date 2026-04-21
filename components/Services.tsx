@@ -28,7 +28,7 @@ const services = [
     ],
     duration: "10-lesson minimum",
     description:
-      "Learning together is always more fun. Sibling packages let your kids swim at the same time in a structured, fun small-group format. Save $100–$200 compared to individual rates.",
+      "Every lesson is still 1-on-1. When you enroll both siblings, each gets the same private, focused attention — just at a reduced rate. No group format, just a better deal for families.",
     accentColor: "#FF6B6B",
   },
   {
@@ -48,21 +48,8 @@ const services = [
     pricing: [{ label: "Per session", price: "$75" }],
     duration: "40 min sessions",
     description:
-      "It's never too late. Adult lessons are private, relaxed, and designed around your goals. Whether that's basic water safety, treading water, or swimming proper laps, Seth works at your pace.",
+      "It's never too late. Adult lessons are private, relaxed, and designed around your goals. Whether that's basic water safety, treading water, or swimming proper laps, we work at your pace.",
     accentColor: "#0093B2",
-  },
-  {
-    icon: "🛟",
-    title: "Private Lifeguard Hire",
-    tag: "Events & Parties",
-    pricing: [
-      { label: "3-hour minimum", price: "$95" },
-      { label: "4 hours", price: "$125" },
-    ],
-    duration: "Minimum 3 hours",
-    description:
-      "Hosting a pool party, backyard bash, or HOA event? Hire a CPR/AED certified lifeguard so every guest can kick back and enjoy the water safely.",
-    accentColor: "#FF6B6B",
   },
 ];
 

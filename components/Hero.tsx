@@ -285,7 +285,7 @@ export default function Hero() {
                 backdropFilter: "blur(6px)",
               }}
             >
-              🌊 Houston&apos;s Favourite Swim Instructor
+              🌊 HTX&apos;s Best Swim Instructor
             </span>
 
             {/* Headline */}
@@ -343,7 +343,7 @@ export default function Hero() {
                   backdropFilter: "blur(6px)",
                 }}
               >
-                Meet Seth ↓
+                Meet Your Instructor ↓
               </a>
             </div>
 

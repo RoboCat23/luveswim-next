@@ -11,7 +11,7 @@ const reasons = [
   {
     icon: "🏠",
     title: "We Come to You",
-    body: "Lessons happen at your home pool or a designated facility. No driving, no strangers' locker rooms, no stress.",
+    body: "Lessons happen at your residential pool or community pool — we come to you. No driving, no strangers' locker rooms, no stress.",
   },
   {
     icon: "👶",
@@ -81,7 +81,7 @@ export default function WhyUs() {
             style={{ color: "#3d5260", fontSize: "1.05rem" }}
           >
             There are plenty of swim instructors in Houston. Here&apos;s why
-            families keep coming back to Seth.
+            families keep coming back.
           </p>
         </motion.div>
 

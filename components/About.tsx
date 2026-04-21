@@ -120,13 +120,6 @@ export default function About() {
               just starting or looking to improve. I take pride in creating a
               safe, fun, and structured environment for every swimmer.
             </p>
-            <p
-              className="leading-relaxed mb-8"
-              style={{ color: "#3d5260", fontSize: "1.08rem" }}
-            >
-              Don&apos;t forget your U CAN energy&hellip; i&apos;ll see you in the water 🏊‍♂️
-            </p>
-
             {/* Credential chips */}
             <div className="flex flex-wrap gap-3 mb-8">
               {credentials.map((c) => (

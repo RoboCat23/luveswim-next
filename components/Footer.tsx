@@ -65,7 +65,7 @@ export default function Footer() {
               LUVESWIM
             </p>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.65)" }}>
-              Houston&apos;s Fun Swim Instructor
+              Houston&apos;s Best Swim Instructor
             </p>
             <p
               className="mt-3 text-sm italic"
@@ -128,7 +128,7 @@ export default function Footer() {
               Quick Links
             </p>
             {[
-              { label: "About Seth", href: "#about" },
+              { label: "About", href: "#about" },
               { label: "Services & Pricing", href: "#services" },
               { label: "The LUVE PROMISE", href: "#promise" },
               { label: "Testimonials", href: "#testimonials" },
@@ -212,11 +212,10 @@ export default function Footer() {
       >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-            © 2026 LUVESWIM. All rights reserved.
+            © 2026 Luve Enterprises LLC. All rights reserved.
           </p>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-            48-hour cancellation required · No-shows charged in full · Weather
-            reschedules always free
+            48-hour cancellation required · No-shows charged in full
           </p>
           <div className="flex gap-4">
             {["Privacy Policy", "Cancellation Policy"].map((link) => (

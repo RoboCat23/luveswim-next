@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Lesson — LUVE Swim",
   description:
-    "Book your private swim lesson with Seth Green in Houston, TX. We come to your pool.",
+    "Book your private swim lesson in Houston, TX. We come to your pool.",
 };
 
 const credentials = [
@@ -51,7 +51,7 @@ export default function BookPage() {
           className="text-sm uppercase tracking-widest mb-3"
           style={{ color: "rgba(255,255,255,0.65)", fontWeight: 700 }}
         >
-          Houston&apos;s Fun Swim Instructor
+          Houston&apos;s Best Swim Instructor
         </p>
         <h1
           className="font-pacifico mb-4"
@@ -67,7 +67,7 @@ export default function BookPage() {
           className="max-w-md mx-auto text-base"
           style={{ color: "rgba(255,255,255,0.8)", lineHeight: 1.7 }}
         >
-          Pick a time that works for you. Seth comes right to your pool — no driving, no hassle.
+          Pick a time that works for you. Your instructor comes right to your pool — no driving, no hassle.
         </p>
       </div>
 
@@ -109,7 +109,7 @@ export default function BookPage() {
               Booking Coming Soon
             </h2>
             <p className="text-base mb-6 max-w-xs" style={{ color: "#3d5260", lineHeight: 1.7 }}>
-              Online scheduling will be live here shortly. In the meantime, reach out directly to get on Seth&apos;s calendar.
+              Online scheduling will be live here shortly. In the meantime, reach out directly to get on the calendar.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -117,7 +117,7 @@ export default function BookPage() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-105"
                 style={{ background: "linear-gradient(135deg, #FF6B6B, #e85555)", boxShadow: "0 4px 16px rgba(255,107,107,0.3)" }}
               >
-                ✉️ Email Seth
+                ✉️ Email Us
               </a>
               <a
                 href="tel:+18326005534"

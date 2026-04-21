@@ -28,7 +28,7 @@ function emailShell(bodyContent: string): string {
                 LUVE SWIM
               </p>
               <p style="margin:6px 0 0;font-size:12px;color:#0CC0DF;letter-spacing:2px;text-transform:uppercase;">
-                Houston&apos;s Fun Swim Instructor
+                Houston&apos;s Best Swim Instructor
               </p>
             </td>
           </tr>
@@ -48,7 +48,7 @@ function emailShell(bodyContent: string): string {
                 &nbsp;·&nbsp; <a href="${SITE_URL}" style="color:#0CC0DF;text-decoration:none;">luveswim.com</a>
               </p>
               <p style="margin:6px 0 0;font-size:11px;color:#b0bec5;">
-                48-hour cancellation required &nbsp;·&nbsp; Weather reschedules always free
+                48-hour cancellation required
               </p>
             </td>
           </tr>
@@ -129,7 +129,7 @@ function applicantEmailHtml(name: string): string {
       Hey ${name}, we got your message!
     </h1>
     <p style="margin:0 0 16px;font-size:15px;color:#3d5260;line-height:1.7;">
-      Thanks for reaching out to LUVE Swim. Seth has been notified and will get back to you personally as soon as he can.
+      Thanks for reaching out to LUVE Swim. We&apos;ve received your message and will get back to you as soon as possible.
     </p>
     <p style="margin:0 0 28px;font-size:15px;color:#3d5260;line-height:1.7;">
       In the meantime, feel free to follow along on Instagram or Facebook to see what we're up to in the water.
@@ -151,7 +151,7 @@ function applicantEmailHtml(name: string): string {
     </table>
 
     <p style="margin:0 0 24px;font-size:14px;color:#9aacb4;line-height:1.7;">
-      Don&apos;t forget your U CAN energy&hellip; we&apos;ll see you in the water 🏊‍♂️
+      See you in the water 🏊‍♂️
     </p>
 
     <!-- CTA -->
