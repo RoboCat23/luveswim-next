@@ -334,7 +334,6 @@ export default function Home() {
             #001018 83%,
             #000A12 90%,
             #000508 100%)`,
-          minHeight: "650vh",
           overflowX: "hidden",
         }}
       >
@@ -988,6 +987,51 @@ export default function Home() {
                 </Reveal>
               ))}
             </div>
+
+            {/* Lifeguard — full-width banner card */}
+            <Reveal delay={0.4}>
+              <div
+                className="service-card mt-8 rounded-2xl overflow-hidden"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.14)",
+                  backdropFilter: "blur(12px)",
+                  borderTop: "4px solid #FF6B6B",
+                }}
+              >
+                <div className="p-7 flex flex-col md:flex-row md:items-center gap-6">
+                  <div className="flex items-center gap-4 md:min-w-[220px]">
+                    <span style={{ fontSize: "2.8rem" }}>🛟</span>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-lg" style={{ color: "#ffffff", fontWeight: 700 }}>
+                          Private Lifeguard Hire
+                        </h3>
+                        <span
+                          className="text-xs px-3 py-1 rounded-full"
+                          style={{ background: "#FF6B6B28", color: "#FF6B6B", fontWeight: 700 }}
+                        >
+                          Events & Parties
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    className="leading-relaxed text-sm flex-1"
+                    style={{ color: "rgba(255,255,255,0.75)" }}
+                  >
+                    Hosting a pool party, backyard bash, or HOA event? We provide CPR/AED certified lifeguard coverage so everyone can relax and enjoy the water safely. Contact us for rates.
+                  </p>
+                  <button
+                    onClick={() => setContactOpen(true)}
+                    className="flex-shrink-0 text-center px-8 py-3 rounded-xl text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
+                    style={{ background: "#FF6B6B", color: "#ffffff", fontWeight: 700 }}
+                  >
+                    Contact Us →
+                  </button>
+                </div>
+              </div>
+            </Reveal>
 
           </div>
         </section>

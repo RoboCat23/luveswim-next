@@ -51,6 +51,16 @@ const services = [
       "It's never too late. Adult lessons are private, relaxed, and designed around your goals. Whether that's basic water safety, treading water, or swimming proper laps, we work at your pace.",
     accentColor: "#0093B2",
   },
+  {
+    icon: "🛟",
+    title: "Private Lifeguard Hire",
+    tag: "Events & Parties",
+    pricing: [],
+    duration: "Contact us for rates",
+    description:
+      "Hosting a pool party, backyard bash, or HOA event? We provide CPR/AED certified lifeguard coverage so everyone can relax and enjoy the water safely. Contact us for rates.",
+    accentColor: "#FF6B6B",
+  },
 ];
 
 const containerVariants = {
