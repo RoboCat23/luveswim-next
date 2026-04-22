@@ -455,7 +455,7 @@ export default function Home() {
                 textShadow: "0 1px 8px rgba(255,255,255,0.4)",
               }}
             >
-              Private lessons at your pool. We work with kids, adults, and everyone in between. Results guaranteed by lesson 10, or you get your money back.
+              Private lessons at your residential or community pool. We work with kids, adults, and everyone in between. Results guaranteed by lesson 10, or you get your money back.
             </p>
           </Reveal>
 
@@ -492,7 +492,7 @@ export default function Home() {
           {/* Proof pills */}
           <Reveal delay={0.4}>
             <div className="flex flex-wrap gap-3 justify-center mt-6">
-              {["✅ CPR/AED Certified", "🏠 We come to you", "💰 Results guaranteed"].map(
+              {["✅ CPR/AED Certified", "🏊 Residential & community pools", "💰 Results guaranteed"].map(
                 (pill) => (
                   <span
                     key={pill}
@@ -910,9 +910,9 @@ export default function Home() {
                     { label: "2 siblings", price: "$60/each" },
                     { label: "3-4 siblings", price: "From $60/each" },
                   ],
-                  duration: "10-lesson minimum",
+                  duration: "Always 1-on-1 · 10-lesson min",
                   description:
-                    "Every lesson is still 1-on-1. When you enroll both siblings, each gets the same private, focused attention — just at a reduced rate. No group format, just a better deal for families.",
+                    "Each sibling gets their own private, 1-on-1 session — no group lessons, ever. Enroll both siblings together and each pays a reduced rate. Same focused, personalized instruction, just a better deal for your family.",
                   accent: "#FF6B6B",
                 },
               ].map((s, i) => (
@@ -1020,7 +1020,7 @@ export default function Home() {
                     className="leading-relaxed text-sm flex-1"
                     style={{ color: "rgba(255,255,255,0.75)" }}
                   >
-                    Hosting a pool party, backyard bash, or HOA event? We provide CPR/AED certified lifeguard coverage so everyone can relax and enjoy the water safely. Contact us for rates.
+                    Hosting a pool party, backyard bash, or HOA event? We provide CPR/AED certified lifeguard coverage so everyone can relax and enjoy the water safely.
                   </p>
                   <button
                     onClick={() => setContactOpen(true)}
@@ -1454,7 +1454,7 @@ export default function Home() {
                   LUVESWIM
                 </p>
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
-                  Houston&apos;s Best Swim Instructor
+                  HTX&apos;s Best Swim Instructor
                 </p>
                 <p className="mt-2 text-sm italic" style={{ color: "rgba(255,255,255,0.4)" }}>
                   &quot;Where U Can Do It&quot;

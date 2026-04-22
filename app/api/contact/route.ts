@@ -26,7 +26,7 @@ function emailShell(bodyContent: string): string {
             <td bgcolor="#003B4A" style="background:#003B4A;padding:32px 40px 28px;text-align:center;">
               <p style="margin:0 0 8px;font-size:28px;line-height:1;">🌊</p>
               <p style="margin:0 0 4px;font-size:26px;font-weight:900;color:#ffffff;letter-spacing:3px;text-transform:uppercase;">LUVE SWIM</p>
-              <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:3px;text-transform:uppercase;">Houston, TX</p>
+              <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;">HTX&apos;s Best Swim Instructor &nbsp;·&nbsp; Houston, TX</p>
             </td>
           </tr>
 
@@ -118,7 +118,7 @@ function applicantEmailHtml(name: string): string {
       Message Received ✓
     </p>
     <h1 style="margin:0 0 16px;font-size:26px;font-weight:800;color:#003B4A;line-height:1.3;">
-      Hey ${name}, you&apos;re one step closer to the water! 🏊‍♂️
+      You&apos;re one step closer to the water! 🏊‍♂️
     </h1>
     <p style="margin:0 0 20px;font-size:15px;color:#3d5260;line-height:1.75;">
       We&apos;ve got your message and will be in touch within <strong style="color:#0093B2;">24 hours</strong> to set up your first lesson. Get ready to make a splash.
@@ -146,10 +146,6 @@ function applicantEmailHtml(name: string): string {
         </td>
       </tr>
     </table>
-
-    <p style="margin:0 0 28px;font-size:14px;color:#6b8796;line-height:1.7;">
-      In the meantime, follow along on social to see what we&apos;re up to in the water.
-    </p>
 
     <!-- Social strip -->
     <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
