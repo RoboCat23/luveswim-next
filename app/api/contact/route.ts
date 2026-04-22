@@ -15,52 +15,32 @@ function emailShell(bodyContent: string): string {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LUVE Swim</title>
 </head>
-<body style="margin:0;padding:0;background:linear-gradient(160deg,#001A25 0%,#003B4A 100%);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(160deg,#001A25 0%,#003B4A 100%);padding:36px 16px;">
+<body style="margin:0;padding:0;background:#f0f4f6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f0f4f6" style="background:#f0f4f6;padding:36px 16px;">
     <tr>
       <td align="center">
-        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.45);">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12);">
 
-          <!-- Header: ocean gradient with wave -->
+          <!-- Header: solid teal — reliable across all email clients -->
           <tr>
-            <td style="background:linear-gradient(135deg,#005F7A 0%,#0093B2 45%,#0CC0DF 100%);padding:36px 40px 0;text-align:center;">
-              <!-- Logo text -->
-              <p style="margin:0 0 4px;font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:3px;text-transform:uppercase;">Houston, TX</p>
-              <p style="margin:0;font-size:32px;font-weight:900;color:#ffffff;letter-spacing:2px;text-shadow:0 2px 12px rgba(0,0,0,0.3);">
-                LUVE SWIM 🌊
-              </p>
-              <p style="margin:6px 0 28px;font-size:11px;color:rgba(255,255,255,0.8);letter-spacing:2px;text-transform:uppercase;">
-                HTX&apos;s Best Swim Instructor
-              </p>
-              <!-- Wave divider -->
-              <div style="line-height:0;font-size:0;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 36" width="560" height="36" style="display:block;max-width:100%;" preserveAspectRatio="none">
-                  <path d="M0 18 Q70 0 140 18 Q210 36 280 18 Q350 0 420 18 Q490 36 560 18 L560 36 L0 36 Z" fill="#ffffff"/>
-                </svg>
-              </div>
+            <td bgcolor="#003B4A" style="background:#003B4A;padding:32px 40px 28px;text-align:center;">
+              <p style="margin:0 0 8px;font-size:28px;line-height:1;">🌊</p>
+              <p style="margin:0 0 4px;font-size:26px;font-weight:900;color:#ffffff;letter-spacing:3px;text-transform:uppercase;">LUVE SWIM</p>
+              <p style="margin:0;font-size:10px;color:rgba(255,255,255,0.55);letter-spacing:3px;text-transform:uppercase;">Houston, TX</p>
             </td>
           </tr>
 
           <!-- Body -->
           <tr>
-            <td style="background:#ffffff;padding:36px 40px 32px;">
+            <td bgcolor="#ffffff" style="background:#ffffff;padding:36px 40px 32px;">
               ${bodyContent}
-            </td>
-          </tr>
-
-          <!-- Wave bottom -->
-          <tr>
-            <td style="background:#ffffff;padding:0;line-height:0;font-size:0;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 24" width="560" height="24" style="display:block;max-width:100%;" preserveAspectRatio="none">
-                <path d="M0 12 Q70 0 140 12 Q210 24 280 12 Q350 0 420 12 Q490 24 560 12 L560 24 L0 24 Z" fill="#003B4A"/>
-              </svg>
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="background:#003B4A;padding:20px 40px 24px;text-align:center;">
-              <p style="margin:0 0 6px;font-size:11px;color:rgba(255,255,255,0.5);">
+            <td bgcolor="#003B4A" style="background:#003B4A;padding:20px 40px 24px;text-align:center;">
+              <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);">
                 © 2026 Luve Enterprises LLC &nbsp;·&nbsp; Houston, TX
                 &nbsp;·&nbsp; <a href="${SITE_URL}" style="color:#0CC0DF;text-decoration:none;">luveswim.com</a>
               </p>
