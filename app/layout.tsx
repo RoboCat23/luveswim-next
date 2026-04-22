@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
-const figtree = Figtree({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -48,7 +48,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${figtree.className} antialiased`} suppressHydrationWarning>{children}</body>
+      <body className={`${bricolage.className} antialiased`} suppressHydrationWarning>{children}</body>
     </html>
   );
 }

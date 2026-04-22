@@ -428,15 +428,18 @@ export default function Home() {
             <h1
               className="font-pacifico"
               style={{
-                fontSize: "clamp(2.6rem, 8vw, 6rem)",
+                fontSize: "clamp(2.8rem, 8.5vw, 6.5rem)",
                 color: "#1A2E3B",
-                lineHeight: 1.1,
-                textShadow: "0 2px 16px rgba(255,255,255,0.5)",
-                maxWidth: 920,
+                lineHeight: 1.08,
+                textShadow: "0 2px 24px rgba(255,255,255,0.7), 0 4px 40px rgba(255,255,255,0.3)",
+                maxWidth: 960,
               }}
             >
               Private Swim Lessons in Houston.{" "}
-              <span style={{ color: "#FF6B6B" }}>We Come to You.</span>
+              <span style={{
+                color: "#FF6B6B",
+                textShadow: "0 2px 20px rgba(255,107,107,0.4), 0 4px 40px rgba(255,255,255,0.3)",
+              }}>We Come to You.</span>
             </h1>
           </Reveal>
 
@@ -444,11 +447,12 @@ export default function Home() {
             <p
               style={{
                 color: "#1A2E3B",
-                fontSize: "clamp(1rem, 2.5vw, 1.3rem)",
-                maxWidth: 700,
-                marginTop: "1.25rem",
-                lineHeight: 1.65,
-                fontWeight: 500,
+                fontSize: "clamp(1.05rem, 2.5vw, 1.35rem)",
+                maxWidth: 680,
+                marginTop: "1.5rem",
+                lineHeight: 1.7,
+                fontWeight: 600,
+                textShadow: "0 1px 8px rgba(255,255,255,0.4)",
               }}
             >
               Private lessons at your pool. We work with kids, adults, and everyone in between. Results guaranteed by lesson 10, or you get your money back.
@@ -492,12 +496,14 @@ export default function Home() {
                 (pill) => (
                   <span
                     key={pill}
-                    className="text-sm px-4 py-1.5 rounded-full"
+                    className="text-sm px-5 py-2 rounded-full"
                     style={{
-                      background: "rgba(255,255,255,0.2)",
-                      border: "1px solid rgba(255,255,255,0.35)",
-                      color: "#1A2E3B",
-                      fontWeight: 600,
+                      background: "rgba(255,255,255,0.28)",
+                      border: "1.5px solid rgba(255,255,255,0.55)",
+                      color: "#0D1E2B",
+                      fontWeight: 700,
+                      backdropFilter: "blur(6px)",
+                      letterSpacing: "0.01em",
                     }}
                   >
                     {pill}
@@ -755,10 +761,7 @@ export default function Home() {
                     boxShadow: "0 8px 40px rgba(0,0,0,0.3)",
                   }}
                 >
-                <p
-                  className="text-sm uppercase tracking-widest mb-3"
-                  style={{ color: "#0CC0DF", fontWeight: 700 }}
-                >
+                <p className="section-label mb-3" style={{ color: "#0CC0DF" }}>
                   Meet Your Instructor
                 </p>
                 <h2
@@ -860,10 +863,7 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto">
             <Reveal className="text-center mb-20">
-              <p
-                className="text-sm uppercase tracking-widest mb-3"
-                style={{ color: "#0CC0DF", fontWeight: 700 }}
-              >
+              <p className="section-label mb-3" style={{ color: "#0CC0DF" }}>
                 What We Offer
               </p>
               <h2
@@ -1093,10 +1093,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <p
-                className="text-sm uppercase tracking-widest mb-3"
-                style={{ color: "rgba(255,255,255,0.65)", fontWeight: 700 }}
-              >
+              <p className="section-label mb-3" style={{ color: "rgba(255,255,255,0.65)" }}>
                 Our Commitment to You
               </p>
             </Reveal>
@@ -1120,16 +1117,23 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.4}>
-              <div className="flex justify-center gap-8 mb-10 flex-wrap">
+              <div className="flex justify-center gap-6 mb-10 flex-wrap">
                 {[
                   { stat: "10", label: "Lessons to hit your goal" },
                   { stat: "100%", label: "Refund if you don't" },
                 ].map((item) => (
-                  <div key={item.label} className="text-center">
-                    <p className="font-pacifico text-white" style={{ fontSize: "2.2rem" }}>
+                  <div key={item.label} className="promise-stat text-center">
+                    <p className="font-pacifico" style={{
+                      fontSize: "clamp(3rem, 6vw, 4.5rem)",
+                      lineHeight: 1,
+                      background: "linear-gradient(135deg, #0CC0DF, #FFD166)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}>
                       {item.stat}
                     </p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.7)", fontWeight: 500 }}>
+                    <p className="mt-2 text-sm" style={{ color: "rgba(255,255,255,0.75)", fontWeight: 600, letterSpacing: "0.04em" }}>
                       {item.label}
                     </p>
                   </div>
@@ -1258,10 +1262,7 @@ export default function Home() {
 
           <div className="max-w-6xl mx-auto">
             <Reveal className="text-center mb-20">
-              <p
-                className="text-sm uppercase tracking-widest mb-3"
-                style={{ color: "#0CC0DF", fontWeight: 700 }}
-              >
+              <p className="section-label mb-3" style={{ color: "#0CC0DF" }}>
                 From Houston Families
               </p>
               <h2
