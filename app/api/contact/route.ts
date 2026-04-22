@@ -118,7 +118,7 @@ function applicantEmailHtml(name: string): string {
       Message Received ✓
     </p>
     <h1 style="margin:0 0 16px;font-size:26px;font-weight:800;color:#003B4A;line-height:1.3;">
-      You&apos;re one step closer to the water! 🏊‍♂️
+      Hey ${name}, you&apos;re one step closer to the water! 🏊‍♂️
     </h1>
     <p style="margin:0 0 20px;font-size:15px;color:#3d5260;line-height:1.75;">
       We&apos;ve got your message and will be in touch within <strong style="color:#0093B2;">24 hours</strong> to set up your first lesson. Get ready to make a splash.
