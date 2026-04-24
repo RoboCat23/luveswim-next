@@ -212,7 +212,7 @@ export default function Footer() {
       >
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-            © 2026 Luve Enterprises LLC. All rights reserved.
+            © 2026 LUVE Enterprises Group LLC. All rights reserved.
           </p>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
             48-hour cancellation required · No-shows charged in full

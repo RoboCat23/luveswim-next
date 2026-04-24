@@ -1538,7 +1538,7 @@ export default function Home() {
               style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem" }}
             >
               <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                © 2026 Luve Enterprises LLC. All rights reserved.
+                © 2026 LUVE Enterprises Group LLC. All rights reserved.
               </p>
               <div className="flex gap-4">
                 {["Privacy Policy", "Cancellation Policy"].map((link) => (

@@ -41,7 +41,7 @@ function emailShell(bodyContent: string): string {
           <tr>
             <td bgcolor="#003B4A" style="background:#003B4A;padding:20px 40px 24px;text-align:center;">
               <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.5);">
-                © 2026 Luve Enterprises LLC &nbsp;·&nbsp; Houston, TX
+                © 2026 LUVE Enterprises Group LLC &nbsp;·&nbsp; Houston, TX
                 &nbsp;·&nbsp; <a href="${SITE_URL}" style="color:#0CC0DF;text-decoration:none;">luveswim.com</a>
               </p>
             </td>
