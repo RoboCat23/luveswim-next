@@ -1326,9 +1326,23 @@ export default function Home() {
                 </div>
               );
             })()}
-            <p className="text-center text-xs mt-8" style={{ color: "rgba(255,255,255,0.3)" }}>
-              * Testimonials are representative. Real reviews will be added before launch.
-            </p>
+            <div className="text-center mt-10">
+              <a
+                href="https://share.google/7otbzsOpvD64LjOZv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  color: "#ffffff",
+                  fontWeight: 700,
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                ⭐ See our Google Reviews
+              </a>
+            </div>
           </div>
         </section>
 
