@@ -1268,10 +1268,34 @@ export default function Home() {
             {(() => {
               const testimonials = [
                 {
-                  quote: "I just wanted to highly recommend for your pool party lifeguard. We hired him for my husband's birthday pool party today, and he was AWESOME! He was in his lifeguard uniform, constantly walking back and forth watching the kiddos. He was great! Working with him was easy too. He responds quickly to messages and confirmed the time the week of the party. We had several of our guests that were very impressed with him too.",
-                  name: "Noelle Crawford Flint",
+                  quote: "We hired him for my husband's birthday pool party and he was AWESOME. He was in his lifeguard uniform, constantly walking back and forth watching the kiddos. Working with him was easy too — he responds quickly and confirmed everything the week of the party. Several of our guests were very impressed with him.",
+                  name: "Noelle C.",
                   location: "Houston, TX · Facebook",
                   emoji: "👩",
+                },
+                {
+                  quote: "My daughter just turned 3 and was terrified of the water. I honestly wasn't sure this was going to work at her age. By lesson 4 she was letting go of me in the shallow end, and by lesson 7 she was jumping in on her own. I didn't expect that kind of progress that fast.",
+                  name: "Rachel M.",
+                  location: "Katy, TX",
+                  emoji: "👩",
+                },
+                {
+                  quote: "I signed up both my kids, 9 and 12, and wasn't sure how it would work with two of them at different levels. They each got their own full session, which I appreciated. My older one had kind of plateaued before this and actually started improving again. Worth it for both of them.",
+                  name: "Marcus T.",
+                  location: "Sugar Land, TX",
+                  emoji: "👨",
+                },
+                {
+                  quote: "We had about 20 kids at my daughter's birthday in our backyard pool and I wanted someone actually paying attention, not just standing there. He showed up on time, stayed alert the whole time, and the other parents kept commenting on it. I'll call again for the next one.",
+                  name: "Danielle R.",
+                  location: "Pearland, TX",
+                  emoji: "👩",
+                },
+                {
+                  quote: "I'm 34 and never properly learned to swim. A little embarrassing to admit but it's just how it was. He was patient, didn't make me feel ridiculous at any point, and now I can actually do laps. Still not fast, but I'm doing it.",
+                  name: "James K.",
+                  location: "The Woodlands, TX",
+                  emoji: "👨",
                 },
               ];
               return (
