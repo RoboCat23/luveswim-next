@@ -1267,9 +1267,12 @@ export default function Home() {
 
             {(() => {
               const testimonials = [
-                { quote: "PLACEHOLDER", name: "PLACEHOLDER", location: "PLACEHOLDER", emoji: "👩" },
-                { quote: "PLACEHOLDER", name: "PLACEHOLDER", location: "PLACEHOLDER", emoji: "👨" },
-                { quote: "PLACEHOLDER", name: "PLACEHOLDER", location: "PLACEHOLDER", emoji: "👩" },
+                {
+                  quote: "I just wanted to highly recommend for your pool party lifeguard. We hired him for my husband's birthday pool party today, and he was AWESOME! He was in his lifeguard uniform, constantly walking back and forth watching the kiddos. He was great! Working with him was easy too. He responds quickly to messages and confirmed the time the week of the party. We had several of our guests that were very impressed with him too.",
+                  name: "Noelle Crawford Flint",
+                  location: "Houston, TX · Facebook",
+                  emoji: "👩",
+                },
               ];
               return (
                 <div style={{ overflow: "hidden", position: "relative" }}>
