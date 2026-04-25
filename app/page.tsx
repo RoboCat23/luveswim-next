@@ -513,23 +513,6 @@ export default function Home() {
             </div>
           </Reveal>
 
-          {/* Scroll hint */}
-          <Reveal delay={0.5}>
-            <div
-              className="mt-10 flex flex-col items-center gap-1"
-              style={{ color: "rgba(26,46,59,0.7)", fontSize: "0.8rem", fontWeight: 600 }}
-            >
-              <span>scroll to dive in</span>
-              <svg
-                className="float-anim"
-                width="20" height="20" viewBox="0 0 20 20"
-                fill="none"
-                style={{ animationDuration: "1.5s" }}
-              >
-                <path d="M5 7 L10 13 L15 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </Reveal>
         </div>
 
         {/* ══════════════════════════════════════════════════════════
