@@ -245,6 +245,26 @@ export default function Home() {
   // ─── Scroll-driven fish ──────────────────────────────────────────────────
   const fishPos = useRef<number[]>(FISH_CONFIGS.map(() => 0));
 
+  // ─── Testimonials horizontal-scroll hijack ──────────────────────────────
+  const testiScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = testiScrollRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      const max = el.scrollWidth - el.clientWidth;
+      const atStart = el.scrollLeft <= 0;
+      const atEnd = el.scrollLeft >= max - 1;
+      if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
   // ─── Contact modal ────────────────────────────────────────────────────────
   const [contactOpen, setContactOpen] = useState(false);
   const [formState, setFormState] = useState({ name: "", email: "", swimmers: "", message: "" });
@@ -777,12 +797,19 @@ export default function Home() {
                 >
                   I created LUVE Swim to provide personalized, high-quality swim lessons that meet each swimmer where they are, whether they&apos;re just starting or looking to improve. I take pride in creating a safe, fun, and structured environment for every swimmer.
                 </p>
+                <p
+                  className="leading-relaxed mb-4 italic"
+                  style={{ color: "#0CC0DF", fontSize: "1.08rem", fontWeight: 600 }}
+                >
+                  Don&apos;t forget your U CAN energy… i&apos;ll see you in the water 🏊‍♂️
+                </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {[
                     { icon: "🛡️", label: "CPR/AED Certified" },
                     { icon: "🏊", label: "4+ Years Swim Instructor" },
                     { icon: "🛟", label: "4+ Years Lifeguard Supervisor" },
-                    { icon: "🏡", label: "Comes to Your Pool" },
+                    { icon: "🏡", label: "Residential Pools" },
+                    { icon: "🏘️", label: "Community Pools" },
                     { icon: "🏆", label: "Competitive Swim Background" },
                   ].map((c) => (
                     <span
@@ -882,7 +909,7 @@ export default function Home() {
                   ],
                   duration: "40 min sessions",
                   description:
-                    "Your swimmer gets the session to themselves. Every class is shaped around where they are and where they want to go. We work with kids starting at 2 years old. Toys, awards, and prizes are part of it.",
+                    "Your swimmer gets the session to themselves. Lessons are built around their level and what they're working on. We work with kids as young as 2. Toys, awards, and prizes keep it fun.",
                   accent: "#0CC0DF",
                 },
                 {
@@ -895,7 +922,7 @@ export default function Home() {
                   ],
                   duration: "Always 1-on-1 · 10-lesson min",
                   description:
-                    "Each sibling gets their own private, 1-on-1 session — no group lessons, ever. Enroll both siblings together and each pays a reduced rate. Same focused, personalized instruction, just a better deal for your family.",
+                    "Each sibling gets their own private, 1-on-1 session. No group lessons, ever. Enroll both together and each pays a reduced rate. Same instruction, better price for your family.",
                   accent: "#FF6B6B",
                 },
               ].map((s, i) => (
@@ -1003,7 +1030,7 @@ export default function Home() {
                     className="leading-relaxed text-sm flex-1"
                     style={{ color: "rgba(255,255,255,0.75)" }}
                   >
-                    Hosting a pool party, backyard bash, or HOA event? We provide CPR/AED certified lifeguard coverage so everyone can relax and enjoy the water safely.
+                    Hosting a pool party, backyard bash, or HOA event? We&apos;ll send a CPR/AED certified lifeguard so the kids stay safe and the adults can actually enjoy themselves.
                   </p>
                   <button
                     onClick={() => setContactOpen(true)}
@@ -1268,85 +1295,98 @@ export default function Home() {
             {(() => {
               const testimonials = [
                 {
-                  quote: "We hired him for my husband's birthday pool party and he was AWESOME. He was in his lifeguard uniform, constantly walking back and forth watching the kiddos. Working with him was easy too — he responds quickly and confirmed everything the week of the party. Several of our guests were very impressed with him.",
+                  quote: "My daughter just turned 3 and was terrified of the water. By lesson 7 she was jumping in on her own. Didn't expect that kind of progress that fast.",
+                  name: "Rachel M.",
+                  location: "Houston, TX",
+                  emoji: "👩",
+                },
+                {
+                  quote: "Signed up both my kids, 9 and 12. They each got their own full session at different levels. My older one had plateaued before this and started improving again. Worth it.",
+                  name: "Marcus T.",
+                  location: "Houston, TX",
+                  emoji: "👨",
+                },
+                {
+                  quote: "We hired him for my husband's birthday pool party and he was AWESOME. He was in his lifeguard uniform, constantly walking back and forth watching the kiddos. Working with him was easy too. He responds quickly and confirmed everything the week of the party. Several of our guests were very impressed with him.",
                   name: "Noelle C.",
                   location: "Houston, TX · Facebook",
                   emoji: "👩",
                 },
                 {
-                  quote: "My daughter just turned 3 and was terrified of the water. I honestly wasn't sure this was going to work at her age. By lesson 4 she was letting go of me in the shallow end, and by lesson 7 she was jumping in on her own. I didn't expect that kind of progress that fast.",
-                  name: "Rachel M.",
-                  location: "Katy, TX",
-                  emoji: "👩",
-                },
-                {
-                  quote: "I signed up both my kids, 9 and 12, and wasn't sure how it would work with two of them at different levels. They each got their own full session, which I appreciated. My older one had kind of plateaued before this and actually started improving again. Worth it for both of them.",
-                  name: "Marcus T.",
-                  location: "Sugar Land, TX",
-                  emoji: "👨",
-                },
-                {
-                  quote: "We had about 20 kids at my daughter's birthday in our backyard pool and I wanted someone actually paying attention, not just standing there. He showed up on time, stayed alert the whole time, and the other parents kept commenting on it. I'll call again for the next one.",
+                  quote: "Had about 20 kids at my daughter's birthday and wanted someone actually paying attention. He showed up on time, stayed alert the whole time. I'll call again for the next one.",
                   name: "Danielle R.",
-                  location: "Pearland, TX",
+                  location: "Houston, TX",
                   emoji: "👩",
                 },
                 {
-                  quote: "I'm 34 and never properly learned to swim. A little embarrassing to admit but it's just how it was. He was patient, didn't make me feel ridiculous at any point, and now I can actually do laps. Still not fast, but I'm doing it.",
+                  quote: "I'm 34 and never properly learned to swim. He was patient, never made me feel ridiculous, and now I can actually do laps. Still not fast, but I'm doing it.",
                   name: "James K.",
-                  location: "The Woodlands, TX",
+                  location: "Houston, TX",
                   emoji: "👨",
                 },
               ];
+              const Card = ({ t }: { t: typeof testimonials[0] }) => (
+                <div
+                  className="testi-card flex flex-col p-7 rounded-2xl flex-shrink-0"
+                  style={{
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    backdropFilter: "blur(10px)",
+                    borderLeft: "4px solid #0CC0DF",
+                  }}
+                >
+                  <div className="flex gap-0.5 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <span key={j} style={{ color: "#FFD166", fontSize: "1.2rem" }}>★</span>
+                    ))}
+                  </div>
+                  <p className="leading-relaxed flex-1 italic" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem" }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3 mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full text-xl" style={{ background: "rgba(255,255,255,0.1)" }}>
+                      {t.emoji}
+                    </div>
+                    <div>
+                      <p style={{ color: "#0CC0DF", fontWeight: 700 }}>{t.name}</p>
+                      <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>{t.location}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+
               return (
-                <div style={{ overflow: "hidden", position: "relative" }}>
+                <div style={{ position: "relative" }}>
                   {/* Fade edges */}
                   <div style={{
                     position: "absolute", left: 0, top: 0, bottom: 0, width: 80, zIndex: 2,
-                    background: "linear-gradient(to right, rgba(0,40,60,1), transparent)"
+                    background: "linear-gradient(to right, rgba(0,40,60,1), transparent)",
+                    pointerEvents: "none",
                   }} />
                   <div style={{
                     position: "absolute", right: 0, top: 0, bottom: 0, width: 80, zIndex: 2,
-                    background: "linear-gradient(to left, rgba(0,40,60,1), transparent)"
+                    background: "linear-gradient(to left, rgba(0,40,60,1), transparent)",
+                    pointerEvents: "none",
                   }} />
 
                   <div
+                    ref={testiScrollRef}
+                    className="testi-scroll"
                     style={{
                       display: "flex",
                       gap: "1.5rem",
-                      width: "max-content",
-                      animation: "wave-drift 22s linear infinite",
+                      overflowX: "auto",
+                      overflowY: "hidden",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      paddingBottom: "0.5rem",
+                      WebkitOverflowScrolling: "touch",
+                      scrollbarWidth: "none",
                     }}
                   >
-                    {[...testimonials, ...testimonials].map((t, i) => (
-                      <div
-                        key={i}
-                        className="testi-card flex flex-col p-7 rounded-2xl flex-shrink-0"
-                        style={{
-                          width: "340px",
-                          background: "rgba(255,255,255,0.07)",
-                          border: "1px solid rgba(255,255,255,0.12)",
-                          backdropFilter: "blur(10px)",
-                          borderLeft: "4px solid #0CC0DF",
-                        }}
-                      >
-                        <div className="flex gap-0.5 mb-4">
-                          {Array.from({ length: 5 }).map((_, j) => (
-                            <span key={j} style={{ color: "#FFD166", fontSize: "1.2rem" }}>★</span>
-                          ))}
-                        </div>
-                        <p className="leading-relaxed flex-1 italic" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1rem" }}>
-                          &ldquo;{t.quote}&rdquo;
-                        </p>
-                        <div className="flex items-center gap-3 mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-                          <div className="flex items-center justify-center w-10 h-10 rounded-full text-xl" style={{ background: "rgba(255,255,255,0.1)" }}>
-                            {t.emoji}
-                          </div>
-                          <div>
-                            <p style={{ color: "#0CC0DF", fontWeight: 700 }}>{t.name}</p>
-                            <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>{t.location}</p>
-                          </div>
-                        </div>
+                    {testimonials.map((t, i) => (
+                      <div key={i} style={{ flexShrink: 0, width: "340px" }}>
+                        <Card t={t} />
                       </div>
                     ))}
                   </div>
@@ -1402,7 +1442,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              bottom: "55%",
+              bottom: "70%",
               left: "4%",
               display: "flex",
               gap: 4,
@@ -1418,7 +1458,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              bottom: "55%",
+              bottom: "70%",
               right: "6%",
               display: "flex",
               gap: 4,
@@ -1434,7 +1474,7 @@ export default function Home() {
           <div
             style={{
               position: "absolute",
-              bottom: "55%",
+              bottom: "70%",
               left: "40%",
               display: "flex",
               gap: 4,
@@ -1449,13 +1489,13 @@ export default function Home() {
           </div>
 
           {/* Coral */}
-          <div style={{ position: "absolute", bottom: "52%", left: "15%", pointerEvents: "none" }}>
+          <div style={{ position: "absolute", bottom: "67%", left: "15%", pointerEvents: "none" }}>
             <Coral color="#FF6B6B" />
           </div>
-          <div style={{ position: "absolute", bottom: "50%", left: "55%", pointerEvents: "none" }}>
+          <div style={{ position: "absolute", bottom: "65%", left: "55%", pointerEvents: "none" }}>
             <Coral color="#FFD166" />
           </div>
-          <div style={{ position: "absolute", bottom: "51%", right: "20%", pointerEvents: "none" }}>
+          <div style={{ position: "absolute", bottom: "66%", right: "20%", pointerEvents: "none" }}>
             <Coral color="#FF6B6B" />
           </div>
 
@@ -1474,9 +1514,13 @@ export default function Home() {
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between gap-10 flex-wrap mb-10">
               {/* Brand */}
               <div>
-                <p className="font-pacifico text-3xl mb-1" style={{ color: "#0CC0DF" }}>
-                  LUVESWIM
-                </p>
+                <Image
+                  src="/logo-luveswim.png"
+                  alt="LUVE SWIM"
+                  width={140}
+                  height={50}
+                  className="object-contain brightness-0 invert mb-3"
+                />
                 <p className="text-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
                   HTX&apos;s Best Swim Instructor
                 </p>
@@ -1485,22 +1529,44 @@ export default function Home() {
                 </p>
                 {/* Social links */}
                 <div className="flex gap-3 mt-4">
-                  {[
-                    { label: "LinkedIn", href: "#", icon: "in" },
-                    { label: "Indeed", href: "#", icon: "in" },
-                    { label: "Instagram", href: "#", icon: "ig" },
-                    { label: "Facebook", href: "#", icon: "fb" },
-                  ].map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      aria-label={s.label}
-                      className="flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold transition-opacity hover:opacity-80"
-                      style={{ background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.15)" }}
-                    >
-                      {s.icon}
-                    </a>
-                  ))}
+                  <a
+                    href="https://www.instagram.com/luveswim?igsh=N3prazFlcDI0NWJ0&utm_source=qr"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-9 h-9 rounded-full transition-opacity hover:opacity-80"
+                    style={{ background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.15)" }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/1A5bh9JZru/?mibextid=wwXIfr"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-9 h-9 rounded-full transition-opacity hover:opacity-80"
+                    style={{ background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.15)" }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/sethgreenuh"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-9 h-9 rounded-full transition-opacity hover:opacity-80"
+                    style={{ background: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)", border: "1px solid rgba(255,255,255,0.15)" }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                  </a>
                 </div>
               </div>
 
@@ -1565,16 +1631,13 @@ export default function Home() {
                 © 2026 LUVE Enterprises Group LLC. All rights reserved.
               </p>
               <div className="flex gap-4">
-                {["Privacy Policy", "Cancellation Policy"].map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="text-xs"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
-                    {link}
-                  </a>
-                ))}
+                <a
+                  href="/terms"
+                  className="text-xs"
+                  style={{ color: "rgba(255,255,255,0.4)" }}
+                >
+                  Terms &amp; Conditions
+                </a>
               </div>
             </div>
           </div>

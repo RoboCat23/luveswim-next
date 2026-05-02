@@ -4,17 +4,18 @@ import type { Metadata } from "next";
 import SquareWidget from "./SquareWidget";
 
 export const metadata: Metadata = {
-  title: "Book a Lesson — LUVE Swim",
+  title: "Book a Lesson | LUVE Swim",
   description:
-    "Book your private swim lesson in Houston, TX. We come to your pool.",
+    "Book your private swim lesson in Houston, TX. Kids and adults welcome. We come to your pool.",
 };
 
 const credentials = [
   { icon: "🛡️", label: "CPR/AED Certified" },
   { icon: "🏊", label: "4+ Years Swim Instruction" },
-  { icon: "👦", label: "Ages 3–17 Specialist" },
+  { icon: "🧑‍🤝‍🧑", label: "Kids & Adults Welcome" },
   { icon: "🏆", label: "Competitive Swim Background" },
-  { icon: "🏡", label: "Comes to Your Pool" },
+  { icon: "🏡", label: "Residential Pools" },
+  { icon: "🏘️", label: "Community Pools" },
 ];
 
 export default function BookPage() {
@@ -73,7 +74,7 @@ export default function BookPage() {
             className="max-w-sm mx-auto"
             style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.75, fontSize: "1rem", fontWeight: 500 }}
           >
-            Pick a time. We come to your residential or community pool — no driving, no hassle.
+            Pick a time. We come to your residential or community pool, so you don&apos;t have to drive anywhere.
           </p>
         </div>
 

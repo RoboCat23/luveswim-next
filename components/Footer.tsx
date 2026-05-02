@@ -218,23 +218,20 @@ export default function Footer() {
             48-hour cancellation required · No-shows charged in full
           </p>
           <div className="flex gap-4">
-            {["Privacy Policy", "Cancellation Policy"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-xs transition-colors duration-200"
-                style={{ color: "rgba(255,255,255,0.45)" }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color = "#0CC0DF")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.color =
-                    "rgba(255,255,255,0.45)")
-                }
-              >
-                {link}
-              </a>
-            ))}
+            <a
+              href="/terms"
+              className="text-xs transition-colors duration-200"
+              style={{ color: "rgba(255,255,255,0.45)" }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.color = "#0CC0DF")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.color =
+                  "rgba(255,255,255,0.45)")
+              }
+            >
+              Terms &amp; Conditions
+            </a>
           </div>
         </div>
       </div>
