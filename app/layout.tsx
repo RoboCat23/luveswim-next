@@ -9,23 +9,61 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "LUVESWIM | Private Swim Lessons in Houston, TX",
+  metadataBase: new URL("https://luveswim.com"),
+  title: {
+    default: "LUVESWIM | Private Swim Lessons in Houston, TX",
+    template: "%s | LUVESWIM",
+  },
   description:
-    "Private swim lessons for all ages in Houston, TX. Certified instructor comes to your pool. Results guaranteed by lesson 10. That's the LUVE PROMISE.",
+    "Private swim lessons for kids and adults in Houston, TX. Certified instructor comes to your residential or community pool. Results guaranteed by lesson 10. That's the LUVE PROMISE.",
+  applicationName: "LUVE Swim",
+  authors: [{ name: "Seth Green" }],
+  creator: "LUVE Enterprises Group LLC",
+  publisher: "LUVE Enterprises Group LLC",
   keywords: [
     "swim lessons Houston",
     "private swim lessons Houston",
     "Houston swim instructor",
     "lifeguard hire Houston",
     "kids swim lessons Houston",
-    "adult swim lessons",
-    "baby swim lessons",
+    "adult swim lessons Houston",
+    "sibling swim package Houston",
+    "pool party lifeguard Houston",
+    "in-home swim lessons",
   ],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
   openGraph: {
-    title: "LUVESWIM | Houston's Fun Swim Instructor",
+    title: "LUVESWIM | Houston's Best Swim Instructor",
     description:
-      "Private swim lessons for all ages. We come to you. Results guaranteed by lesson 10, or your money back.",
+      "Private swim lessons for kids and adults. We come to your residential or community pool. Results guaranteed by lesson 10, or your money back.",
+    url: "https://luveswim.com",
+    siteName: "LUVE Swim",
     type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/logo-luveswim.png",
+        width: 1200,
+        height: 630,
+        alt: "LUVE Swim — Houston's Best Swim Instructor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LUVESWIM | Houston's Best Swim Instructor",
+    description:
+      "Private swim lessons for kids and adults. We come to your residential or community pool. Results guaranteed by lesson 10.",
+    images: ["/logo-luveswim.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -44,7 +82,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Pacifico&display=swap"
           rel="stylesheet"
         />
       </head>

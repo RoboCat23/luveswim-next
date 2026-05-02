@@ -446,8 +446,8 @@ export default function Home() {
         >
           <Reveal delay={0.1}>
             <h1
-              className="font-pacifico"
               style={{
+                fontFamily: "'Pacifico', cursive",
                 fontSize: "clamp(2.8rem, 8.5vw, 6.5rem)",
                 color: "#1A2E3B",
                 lineHeight: 1.08,
@@ -890,158 +890,212 @@ export default function Home() {
                 className="max-w-xl mx-auto leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.08rem" }}
               >
-                No shared classes, no off-the-shelf programs. It&apos;s just you and your instructor, working toward your specific goal.
+                No groups. No distractions. Just real results.
               </p>
             </Reveal>
 
             <div
-              className="grid gap-8"
-              style={{ gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))" }}
+              className="grid gap-10 items-stretch"
+              style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}
             >
               {[
                 {
                   icon: "🏊",
-                  title: "Private 1-on-1 Lessons",
+                  title: "Luxury Private Swim Lessons",
                   tag: "Most Popular",
                   pricing: [
-                    { label: "Kids (2yr–17yr)", price: "$65/session" },
-                    { label: "Adults (18+)", price: "$75/session" },
+                    { label: "Kids (2yr–17yr)", price: "$65", per: "per session" },
+                    { label: "Adults (18+)", price: "$75", per: "per session" },
                   ],
-                  duration: "40 min sessions",
+                  duration: "40-Minute Sessions · 10-Lesson Minimum",
                   description:
-                    "Your swimmer gets the session to themselves. Lessons are built around their level and what they're working on. We work with kids as young as 2. Toys, awards, and prizes keep it fun.",
-                  accent: "#0CC0DF",
+                    "Every session is fully customized to your swimmer's skill level and goals. Whether they're learning water safety or refining stroke technique, they'll receive focused, one-on-one instruction with zero distractions.",
+                  accent: "#FFD166",
+                  textOnAccent: "#003B4A",
+                  ctaText: "Book a Lesson",
+                  ctaHref: BOOKING_URL,
+                  onClickContact: false,
                 },
                 {
                   icon: "👨‍👩‍👧‍👦",
                   title: "Sibling Packages",
                   tag: "Best Value",
                   pricing: [
-                    { label: "2 siblings", price: "$60/each" },
-                    { label: "3-4 siblings", price: "From $60/each" },
+                    { label: "2 Swimmers", price: "$60", per: "per session" },
+                    { label: "3-4 Swimmers", price: "Custom", per: "family packages" },
                   ],
-                  duration: "Always 1-on-1 · 10-lesson min",
+                  duration: "Private Sessions for Each Swimmer · 10-Lesson Minimum",
                   description:
-                    "Each sibling gets their own private, 1-on-1 session. No group lessons, ever. Enroll both together and each pays a reduced rate. Same instruction, better price for your family.",
-                  accent: "#FF6B6B",
+                    "Each sibling gets their own private, 1-on-1 session. No group lessons, ever. Enroll multiple swimmers together and unlock our reduced family rate. The same focused, premium instruction your swimmers deserve, at a price built for the whole family.",
+                  accent: "#7BD9C2",
+                  textOnAccent: "#003B4A",
+                  ctaText: "Reserve Your Package",
+                  ctaHref: BOOKING_URL,
+                  onClickContact: false,
                 },
-              ].map((s, i) => (
-                <Reveal key={s.title} delay={i * 0.08}>
-                  <div
-                    className="service-card flex flex-col rounded-2xl overflow-hidden h-full"
-                    style={{
-                      background: "rgba(255,255,255,0.08)",
-                      border: "1px solid rgba(255,255,255,0.14)",
-                      backdropFilter: "blur(12px)",
-                      borderTop: `4px solid ${s.accent}`,
-                    }}
-                  >
-                    <div className="p-7 flex flex-col flex-1">
-                      <div className="flex items-start justify-between mb-4">
-                        <span style={{ fontSize: "2.5rem" }}>{s.icon}</span>
-                        <span
-                          className="text-xs px-3 py-1 rounded-full"
+                {
+                  icon: "🛟",
+                  title: "Private Lifeguard Hire",
+                  tag: "Events & Parties",
+                  pricing: null,
+                  duration: "CPR/AED Certified · Event-Based",
+                  description:
+                    "Hosting a pool party or event? Our certified lifeguards ensure a safe, stress-free environment so you can fully enjoy the experience. Ideal for birthdays, private events, and community gatherings.",
+                  accent: "#FF6B6B",
+                  textOnAccent: "#ffffff",
+                  ctaText: "Check Availability",
+                  ctaHref: null,
+                  onClickContact: true,
+                },
+              ].map((s, i) => {
+                const isPopular = s.tag === "Most Popular";
+                return (
+                  <Reveal key={s.title} delay={i * 0.08}>
+                    <div
+                      className="service-card relative flex flex-col rounded-3xl overflow-hidden h-full transition-all duration-300 hover:-translate-y-1"
+                      style={{
+                        background: "linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.05) 100%)",
+                        border: `1px solid ${isPopular ? "rgba(12,192,223,0.35)" : "rgba(255,255,255,0.14)"}`,
+                        backdropFilter: "blur(14px)",
+                        boxShadow: isPopular
+                          ? `0 0 0 1px ${s.accent}33, 0 24px 60px rgba(12,192,223,0.18)`
+                          : "0 12px 40px rgba(0,0,0,0.25)",
+                      }}
+                    >
+                      {/* Top accent bar */}
+                      <div style={{ height: 5, background: s.accent }} />
+
+                      <div className="p-8 flex flex-col flex-1">
+                        {/* Header: icon + badge */}
+                        <div className="flex items-start justify-between mb-3">
+                          <span style={{ fontSize: "3rem", lineHeight: 1 }}>{s.icon}</span>
+                          <span
+                            className="inline-flex items-center px-5 py-2 rounded-full text-sm uppercase"
+                            style={{
+                              background: `linear-gradient(135deg, ${s.accent}, ${s.accent}cc)`,
+                              color: s.textOnAccent,
+                              fontWeight: 900,
+                              letterSpacing: "0.1em",
+                              boxShadow: `0 0 0 2px ${s.accent}33, 0 8px 24px ${s.accent}77, 0 0 32px ${s.accent}55`,
+                            }}
+                          >
+                            {s.tag}
+                          </span>
+                        </div>
+
+                        {/* Title */}
+                        <h3
+                          className="font-pacifico mb-2"
+                          style={{ color: "#ffffff", fontSize: "1.75rem", lineHeight: 1.15 }}
+                        >
+                          {s.title}
+                        </h3>
+
+                        {/* Duration */}
+                        <p
+                          className="text-xs uppercase mb-5"
                           style={{
-                            background: `${s.accent}28`,
                             color: s.accent,
                             fontWeight: 700,
+                            letterSpacing: "0.12em",
                           }}
                         >
-                          {s.tag}
-                        </span>
-                      </div>
-                      <h3
-                        className="text-lg mb-1"
-                        style={{ color: "#ffffff", fontWeight: 700 }}
-                      >
-                        {s.title}
-                      </h3>
-                      <p className="text-xs mb-4" style={{ color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>
-                        {s.duration}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {s.pricing.map((p) => (
+                          {s.duration}
+                        </p>
+
+                        {/* Pricing block */}
+                        {s.pricing ? (
+                          <div className="grid grid-cols-2 gap-3 mb-6">
+                            {s.pricing.map((p) => (
+                              <div
+                                key={p.label}
+                                className="flex flex-col px-4 py-4 rounded-2xl"
+                                style={{
+                                  background: "rgba(255,255,255,0.06)",
+                                  border: "1px solid rgba(255,255,255,0.08)",
+                                }}
+                              >
+                                <span className="text-xs mb-1.5" style={{ color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.02em" }}>
+                                  {p.label}
+                                </span>
+                                <span
+                                  style={{
+                                    color: s.accent,
+                                    fontWeight: 900,
+                                    fontSize: p.price.length > 4 ? "1.5rem" : "2.5rem",
+                                    lineHeight: 1.05,
+                                    letterSpacing: "-0.02em",
+                                  }}
+                                >
+                                  {p.price}
+                                </span>
+                                <span className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.35)", fontWeight: 500 }}>
+                                  {p.per}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
                           <div
-                            key={p.label}
-                            className="flex flex-col px-3 py-2 rounded-xl"
-                            style={{ background: "rgba(255,255,255,0.07)" }}
+                            className="mb-6 px-5 py-5 rounded-2xl text-center"
+                            style={{
+                              background: "rgba(255,255,255,0.06)",
+                              border: "1px solid rgba(255,255,255,0.08)",
+                            }}
                           >
-                            <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
-                              {p.label}
+                            <span className="block text-xs uppercase mb-1.5" style={{ color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.1em" }}>
+                              Pricing
                             </span>
-                            <span className="text-lg" style={{ color: s.accent, fontWeight: 800 }}>
-                              {p.price}
+                            <span style={{ color: s.accent, fontWeight: 900, fontSize: "1.75rem", letterSpacing: "-0.01em" }}>
+                              Custom Quote
                             </span>
                           </div>
-                        ))}
-                      </div>
-                      <p
-                        className="leading-relaxed flex-1 text-sm"
-                        style={{ color: "rgba(255,255,255,0.75)" }}
-                      >
-                        {s.description}
-                      </p>
-                      <button
-                        onClick={() => setContactOpen(true)}
-                        className="mt-6 w-full text-center py-3 rounded-xl text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-                        style={{
-                          background: s.accent,
-                          color: "#ffffff",
-                          fontWeight: 700,
-                        }}
-                      >
-                        Contact Us →
-                      </button>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+                        )}
 
-            {/* Lifeguard — full-width banner card */}
-            <Reveal delay={0.4}>
-              <div
-                className="service-card mt-8 rounded-2xl overflow-hidden"
-                style={{
-                  background: "rgba(255,255,255,0.08)",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  backdropFilter: "blur(12px)",
-                  borderTop: "4px solid #FF6B6B",
-                }}
-              >
-                <div className="p-7 flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex items-center gap-4 md:min-w-[220px]">
-                    <span style={{ fontSize: "2.8rem" }}>🛟</span>
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="text-lg" style={{ color: "#ffffff", fontWeight: 700 }}>
-                          Private Lifeguard Hire
-                        </h3>
-                        <span
-                          className="text-xs px-3 py-1 rounded-full"
-                          style={{ background: "#FF6B6B28", color: "#FF6B6B", fontWeight: 700 }}
+                        {/* Description */}
+                        <p
+                          className="leading-relaxed flex-1 text-sm mb-6"
+                          style={{ color: "rgba(255,255,255,0.78)" }}
                         >
-                          Events & Parties
-                        </span>
+                          {s.description}
+                        </p>
+
+                        {/* CTA */}
+                        {s.onClickContact ? (
+                          <button
+                            onClick={() => setContactOpen(true)}
+                            className="w-full text-center py-4 rounded-2xl text-sm transition-all duration-200 hover:scale-[1.02]"
+                            style={{
+                              background: `linear-gradient(135deg, ${s.accent}, ${s.accent}dd)`,
+                              color: s.textOnAccent,
+                              fontWeight: 800,
+                              letterSpacing: "0.02em",
+                              boxShadow: `0 10px 28px ${s.accent}55`,
+                            }}
+                          >
+                            {s.ctaText} →
+                          </button>
+                        ) : (
+                          <a
+                            href={s.ctaHref!}
+                            className="block w-full text-center py-4 rounded-2xl text-sm transition-all duration-200 hover:scale-[1.02]"
+                            style={{
+                              background: `linear-gradient(135deg, ${s.accent}, ${s.accent}dd)`,
+                              color: s.textOnAccent,
+                              fontWeight: 800,
+                              letterSpacing: "0.02em",
+                              boxShadow: `0 10px 28px ${s.accent}55`,
+                            }}
+                          >
+                            {s.ctaText} →
+                          </a>
+                        )}
                       </div>
                     </div>
-                  </div>
-                  <p
-                    className="leading-relaxed text-sm flex-1"
-                    style={{ color: "rgba(255,255,255,0.75)" }}
-                  >
-                    Hosting a pool party, backyard bash, or HOA event? We&apos;ll send a CPR/AED certified lifeguard so the kids stay safe and the adults can actually enjoy themselves.
-                  </p>
-                  <button
-                    onClick={() => setContactOpen(true)}
-                    className="flex-shrink-0 text-center px-8 py-3 rounded-xl text-sm transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-                    style={{ background: "#FF6B6B", color: "#ffffff", fontWeight: 700 }}
-                  >
-                    Contact Us →
-                  </button>
-                </div>
-              </div>
-            </Reveal>
+                  </Reveal>
+                );
+              })}
+            </div>
 
           </div>
         </section>

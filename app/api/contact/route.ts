@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
 
-const FROM = "LUVE Swim <test@team.trkaiagency.com>";
+const FROM = "LUVE Swim <noreply@luveswim.com>";
 const SETH_EMAIL = "contact@luveswim.com";
 const SITE_URL = "https://luveswim.com";
 
