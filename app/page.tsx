@@ -789,7 +789,7 @@ export default function Home() {
                   className="leading-relaxed mb-4"
                   style={{ color: "rgba(255,255,255,0.88)", fontSize: "1.08rem" }}
                 >
-                  I&apos;ve worked with children ages 3&ndash;17 both in and out of the water, focusing on building confidence, safety, and strong swimming fundamentals. Growing up around the water and competing in swimming, I&apos;ve always had a passion for helping others learn.
+                  I&apos;ve worked with children ages 2&ndash;17 both in and out of the water, focusing on building confidence, safety, and strong swimming fundamentals. Growing up around the water and competing in swimming, I&apos;ve always had a passion for helping others learn.
                 </p>
                 <p
                   className="leading-relaxed mb-4"
@@ -801,7 +801,7 @@ export default function Home() {
                   className="leading-relaxed mb-4 italic"
                   style={{ color: "#0CC0DF", fontSize: "1.08rem", fontWeight: 600 }}
                 >
-                  Don&apos;t forget your U CAN energy… i&apos;ll see you in the water 🏊‍♂️
+                  Don&apos;t forget your &ldquo;U CAN&rdquo; energy… i&apos;ll see you in the water 🏊‍♂️
                 </p>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {[
@@ -913,8 +913,8 @@ export default function Home() {
                   accent: "#FFD166",
                   textOnAccent: "#003B4A",
                   ctaText: "Book a Lesson",
-                  ctaHref: BOOKING_URL,
-                  onClickContact: false,
+                  ctaHref: null,
+                  onClickContact: true,
                 },
                 {
                   icon: "👨‍👩‍👧‍👦",
@@ -930,8 +930,8 @@ export default function Home() {
                   accent: "#7BD9C2",
                   textOnAccent: "#003B4A",
                   ctaText: "Reserve Your Package",
-                  ctaHref: BOOKING_URL,
-                  onClickContact: false,
+                  ctaHref: null,
+                  onClickContact: true,
                 },
                 {
                   icon: "🛟",
@@ -944,8 +944,8 @@ export default function Home() {
                   accent: "#FF6B6B",
                   textOnAccent: "#ffffff",
                   ctaText: "Check Availability",
-                  ctaHref: null,
-                  onClickContact: true,
+                  ctaHref: BOOKING_URL,
+                  onClickContact: false,
                 },
               ].map((s, i) => {
                 const isPopular = s.tag === "Most Popular";

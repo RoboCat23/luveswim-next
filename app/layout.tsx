@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/logo-luveswim.png",
-        width: 1200,
-        height: 630,
-        alt: "LUVE Swim — Houston's Best Swim Instructor",
+        url: "/seth.jpg",
+        width: 827,
+        height: 989,
+        alt: "Seth Green — LUVE Swim instructor in Houston, TX",
       },
     ],
   },
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "LUVESWIM | Houston's Best Swim Instructor",
     description:
       "Private swim lessons for kids and adults. We come to your residential or community pool. Results guaranteed by lesson 10.",
-    images: ["/logo-luveswim.png"],
+    images: ["/seth.jpg"],
   },
   robots: {
     index: true,
