@@ -267,7 +267,7 @@ export default function Home() {
 
   // ─── Contact modal ────────────────────────────────────────────────────────
   const [contactOpen, setContactOpen] = useState(false);
-  const [formState, setFormState] = useState({ name: "", email: "", swimmers: "", message: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", phone: "", swimmers: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
@@ -1747,7 +1747,7 @@ export default function Home() {
                       });
                       if (res.ok) {
                         setSubmitted(true);
-                        setFormState({ name: "", email: "", swimmers: "", message: "" });
+                        setFormState({ name: "", email: "", phone: "", swimmers: "", message: "" });
                       } else {
                         setSendError("Something went wrong. Please try again or email us directly.");
                       }
@@ -1772,6 +1772,17 @@ export default function Home() {
                     placeholder="Your email"
                     value={formState.email}
                     onChange={(e) => setFormState(s => ({ ...s, email: e.target.value }))}
+                    className="w-full px-4 py-3 rounded-xl text-sm"
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff" }}
+                  />
+                  <input
+                    required
+                    type="tel"
+                    placeholder="Phone number (e.g. 832-555-1234)"
+                    value={formState.phone}
+                    onChange={(e) => setFormState(s => ({ ...s, phone: e.target.value }))}
+                    pattern="[\+]?[\d\s\-\(\)]{7,15}"
+                    title="Please enter a valid phone number"
                     className="w-full px-4 py-3 rounded-xl text-sm"
                     style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", color: "#fff" }}
                   />

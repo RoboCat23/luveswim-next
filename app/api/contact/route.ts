@@ -56,7 +56,7 @@ function emailShell(bodyContent: string): string {
 }
 
 // ─── Seth notification email ──────────────────────────────────────────────────
-function sethEmailHtml(name: string, email: string, swimmers: string, message: string): string {
+function sethEmailHtml(name: string, email: string, phone: string, swimmers: string, message: string): string {
   return emailShell(`
     <!-- Tag -->
     <p style="margin:0 0 4px;font-size:11px;color:#0CC0DF;font-weight:700;letter-spacing:2px;text-transform:uppercase;">
@@ -84,6 +84,12 @@ function sethEmailHtml(name: string, email: string, swimmers: string, message: s
                 <a href="mailto:${email}" style="color:#0093B2;font-weight:600;text-decoration:none;">${email}</a>
               </td>
             </tr>
+            ${phone ? `<tr>
+              <td style="padding:7px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Phone</td>
+              <td style="padding:7px 0;font-size:15px;">
+                <a href="tel:${phone}" style="color:#0093B2;font-weight:600;text-decoration:none;">${phone}</a>
+              </td>
+            </tr>` : ""}
             ${swimmers ? `<tr>
               <td style="padding:7px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Swimmers</td>
               <td style="padding:7px 0;font-size:15px;color:#1A2E3B;">${swimmers}</td>
@@ -111,7 +117,7 @@ function sethEmailHtml(name: string, email: string, swimmers: string, message: s
 }
 
 // ─── Applicant confirmation email ─────────────────────────────────────────────
-function applicantEmailHtml(name: string): string {
+function applicantEmailHtml(name: string, email: string, phone: string, swimmers: string, message: string): string {
   return emailShell(`
     <!-- Greeting -->
     <p style="margin:0 0 4px;font-size:11px;color:#0CC0DF;font-weight:700;letter-spacing:2px;text-transform:uppercase;">
@@ -123,6 +129,37 @@ function applicantEmailHtml(name: string): string {
     <p style="margin:0 0 20px;font-size:15px;color:#3d5260;line-height:1.75;">
       We&apos;ve got your message and will be in touch within <strong style="color:#0093B2;">24 hours</strong> to set up your first lesson. Get ready to make a splash.
     </p>
+
+    <!-- Submission summary card -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg,#f0fafb,#e8f6fa);border-radius:14px;margin-bottom:20px;border:1px solid rgba(12,192,223,0.18);">
+      <tr>
+        <td style="padding:24px 28px;">
+          <p style="margin:0 0 14px;font-size:12px;color:#0CC0DF;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Your submission</p>
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="padding:6px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;width:90px;">Name</td>
+              <td style="padding:6px 0;font-size:14px;color:#1A2E3B;font-weight:600;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Email</td>
+              <td style="padding:6px 0;font-size:14px;color:#1A2E3B;">${email}</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Phone</td>
+              <td style="padding:6px 0;font-size:14px;color:#1A2E3B;">${phone}</td>
+            </tr>
+            ${swimmers ? `<tr>
+              <td style="padding:6px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Swimmers</td>
+              <td style="padding:6px 0;font-size:14px;color:#1A2E3B;">${swimmers}</td>
+            </tr>` : ""}
+            ${message ? `<tr>
+              <td style="padding:6px 0;font-size:12px;color:#9aacb4;font-weight:700;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Notes</td>
+              <td style="padding:6px 0;font-size:14px;color:#3d5260;line-height:1.55;">${message}</td>
+            </tr>` : ""}
+          </table>
+        </td>
+      </tr>
+    </table>
 
     <!-- What to expect card -->
     <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg,#f0fafb,#e8f6fa);border-radius:14px;margin-bottom:28px;border:1px solid rgba(12,192,223,0.18);">
@@ -185,7 +222,7 @@ export async function POST(req: NextRequest) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const { name, email, swimmers, message } = await req.json();
+    const { name, email, phone, swimmers, message } = await req.json();
 
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
@@ -197,13 +234,13 @@ export async function POST(req: NextRequest) {
         to: SETH_EMAIL,
         replyTo: email,
         subject: `New contact request from ${name}`,
-        html: sethEmailHtml(name, email, swimmers ?? "", message ?? ""),
+        html: sethEmailHtml(name, email, phone ?? "", swimmers ?? "", message ?? ""),
       }),
       resend.emails.send({
         from: FROM,
         to: email,
         subject: "We got your message — LUVE Swim",
-        html: applicantEmailHtml(name),
+        html: applicantEmailHtml(name, email, phone ?? "", swimmers ?? "", message ?? ""),
       }),
     ]);
 
